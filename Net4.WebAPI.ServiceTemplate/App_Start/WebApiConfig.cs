@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace Net4.WebAPI.ServiceTemplate.App_Start
 {
@@ -12,12 +8,14 @@ namespace Net4.WebAPI.ServiceTemplate.App_Start
         {
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new
-                {
-                    id = RouteParameter.Optional
-                }
+                routeTemplate: "api/{controller}",
+                defaults: new { controller = "Service" }
             );
+            //config.Routes.MapHttpRoute(
+            //    name: "SoapApi",
+            //    routeTemplate: "{controller}/{action}",
+            //    defaults: new { controller = "Service" }
+            //);
 
         }
     }
